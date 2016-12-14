@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Fragment</title>
+</head>
+<body>
+
+<div th:fragment="input_text(title,modelName,required,min,max)" th:remove="tag">
+    <div class="form-group" th:ng-class="'{ \'has-error\' : ' + |${formName}.${modelName}.$invalid }|">
+        <input type="text" class="form-control input-sm"
+               th:ng-model="|form.${modelName}|" th:name="${modelName}"
+               th:required="${required}" th:minlength="${min}" th:maxlength="${max}"
+               th:popover-title="${title}" th:uib-popover-template="|'${modelName}Error.html'|"
+               popover-trigger="'focus'" popover-placement="bottom-right"/>
+        <span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="true"
+              th:ng-show="|${formName}.${modelName}.$invalid|"></span>
+        <th:script type="text/ng-template" th:id="|${modelName}Error.html|">
+            <ul class="list-unstyled">
+                <li th:if="${required}"
+                    th:ng-show="|${formName}.${modelName}.$error.required|">required</li>
+                <li th:if="${min} != null"
+                    th:ng-show="|${formName}.${modelName}.$error.minlength|" th:text="|greater than ${min}|"></li>
+                <li th:if="${max} != null"
+                    th:ng-show="|${formName}.${modelName}.$error.maxlength|" th:text="|less than ${max}|"></li>
+            </ul>
+        </th:script>
+    </div>
+</div>
+
+</body>
+</html>
