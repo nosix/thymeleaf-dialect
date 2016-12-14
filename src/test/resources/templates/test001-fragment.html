@@ -7,7 +7,7 @@
 <body>
 
 <div th:fragment="input_text(title,modelName,required,min,max)" th:remove="tag">
-    <div class="form-group" th:ng-class="'{ \'has-error\' : ' + |${formName}.${modelName}.$invalid }|">
+    <div class="form-group" th:ng-class="|{ 'has-error' : ${formName}.${modelName}.$invalid }|">
         <input type="text" class="form-control input-sm"
                th:ng-model="|form.${modelName}|" th:name="${modelName}"
                th:required="${required}" th:minlength="${min}" th:maxlength="${max}"

@@ -26,9 +26,9 @@ repositories {
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
-	compile('net.sourceforge.nekohtml:nekohtml:1.9.15') // for LEGACY HTML5 template
-	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
+	testCompile('net.sourceforge.nekohtml:nekohtml:1.9.15') // for LEGACY HTML5 template
+	testCompile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
