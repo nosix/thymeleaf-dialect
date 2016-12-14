@@ -15,11 +15,8 @@ buildscript {
 apply plugin: 'kotlin'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'maven'
 
-jar {
-	baseName = 'thymeleaf.dialect'
-	version = '0.0.1-SNAPSHOT'
-}
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
@@ -27,11 +24,38 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('net.sourceforge.nekohtml:nekohtml:1.9.15') // for LEGACY HTML5 template
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile("org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+// Distribute with GitHub
+
+group = 'org.anyspirit'
+archivesBaseName = 'thymeleaf-dialect'
+version = '0.0.1'
+
+uploadArchives {
+	repositories {
+		mavenDeployer {
+			repository(url: "file:${projectDir}")
+		}
+	}
+}
+
+[install.repositories.mavenInstaller, uploadArchives.repositories.mavenDeployer]*.pom*.whenConfigured { pom ->
+	pom.project {
+		inceptionYear '2016'
+		packaging 'jar'
+		licenses {
+			license {
+				name 'The Apache Software License, Version 2.0'
+				url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+				distribution 'repo'
+			}
+		}
+	}
 }
