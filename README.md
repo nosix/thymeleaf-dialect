@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-	compile 'org.musyozoku:thymeleaf-dialect:0.0.1'
+	compile 'org.musyozoku:thymeleaf-dialect:0.0.2'
 }
 ```
 
