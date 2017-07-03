@@ -1,4 +1,4 @@
-package org.anyspirit.thymeleaf.dialect
+package org.musyozoku.thymeleaf.dialect
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication

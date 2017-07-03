@@ -1,4 +1,4 @@
-package org.anyspirit.thymeleaf.dialect
+package org.musyozoku.thymeleaf.dialect
 
 fun CustomSpringDialect.Builder.enableAngularJS1() = apply {
     toBeModified(*SupportAttributes.ANGULAR_JS_1)
