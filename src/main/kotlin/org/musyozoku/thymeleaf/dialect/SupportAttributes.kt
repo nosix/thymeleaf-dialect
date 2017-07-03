@@ -1,4 +1,4 @@
-package org.anyspirit.thymeleaf.dialect
+package org.musyozoku.thymeleaf.dialect
 
 object SupportAttributes {
 

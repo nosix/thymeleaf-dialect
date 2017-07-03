@@ -1,4 +1,4 @@
-package org.anyspirit.thymeleaf.dialect
+package org.musyozoku.thymeleaf.dialect
 
 import org.thymeleaf.processor.IProcessor
 import org.thymeleaf.spring4.dialect.SpringStandardDialect

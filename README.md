@@ -21,7 +21,7 @@ repositories {
 }
 
 dependencies {
-	compile 'org.anyspirit:thymeleaf-dialect:0.0.1'
+	compile 'org.musyozoku:thymeleaf-dialect:0.0.2'
 }
 ```
 
@@ -129,11 +129,11 @@ open class WebApplication {
 
 ## List of prepared attributes
 
-[SupportAttributes.kt](https://github.com/nosix/thymeleaf-dialect/blob/master/src/main/kotlin/org/anyspirit/thymeleaf/dialect/SupportAttributes.kt)
+[SupportAttributes.kt](https://github.com/nosix/thymeleaf-dialect/blob/master/src/main/kotlin/org/musyozoku/thymeleaf/dialect/SupportAttributes.kt)
 
 ## Extensions
 
-[BuilderExtensions.kt](https://github.com/nosix/thymeleaf-dialect/blob/master/src/main/kotlin/org/anyspirit/thymeleaf/dialect/BuilderExtensions.kt)
+[BuilderExtensions.kt](https://github.com/nosix/thymeleaf-dialect/blob/master/src/main/kotlin/org/musyozoku/thymeleaf/dialect/BuilderExtensions.kt)
 
 - enableAngularJS1()
     - add ANGULAR_JS_1 attributes
